@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'loginPage.dart';
+import 'NewUser.dart';
 
 void main() {
   runApp(const MyAPP());

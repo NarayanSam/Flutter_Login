@@ -1,15 +1,15 @@
 import 'dart:html';
-import 'NewUser.dart';
+
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class NewUser extends StatefulWidget {
+  const NewUser({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<NewUser> createState() => _NewUserState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _NewUserState extends State<NewUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,32 +17,38 @@ class _LoginPageState extends State<LoginPage> {
       body: SafeArea(
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            //Hello
-            SizedBox(
-              height: 25,
-            ),
             Text(
-              'Hello Again!!',
+              'Create your Account',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
               ),
             ),
+            //Name
             SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Text(
-              'WELCOME to MyAPP',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 32,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Name',
+                    ),
+                  ),
+                ),
               ),
             ),
-
-            //email Textfield
-
+            //E-mail
             SizedBox(
-              height: 75,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -63,7 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            //password Textfield
+            //Password
+
             SizedBox(
               height: 10,
             ),
@@ -81,13 +88,37 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Password',
+                      hintText: 'Create  New Password',
                     ),
                   ),
                 ),
               ),
             ),
-            //sign in button
+            //Confirm
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Confirm Password',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            //create
             SizedBox(
               height: 20,
             ),
@@ -101,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Center(
                   child: Text(
-                    'Sign in',
+                    'Create Your Account',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -111,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            //forgot password?
+            //already a user
             SizedBox(
               height: 5,
             ),
@@ -121,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Forgot Password?',
+                    'Already a User!',
                     style: TextStyle(
                       color: Colors.redAccent,
                     ),
@@ -129,40 +160,9 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-            //not a member? register now
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Not a member?'),
-                InkWell(
-                  child: Text(
-                    'Register Now!',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                    ),
-                    //onTap: () {
-                    //_navigateToNextScreen(context);
-                    //},
-                  ),
-                ),
-              ],
-            ),
-            //Google
-            SizedBox(
-              height: 50,
-            ),
           ]),
         ),
       ),
     );
-  }
-
-  void _navigateToNextScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => NewUser()));
   }
 }
