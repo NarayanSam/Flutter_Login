@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'NewUser.dart';
 import 'package:flutter/material.dart';
 import 'blank.dart';
+import 'forgotPass.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -88,6 +89,31 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+
+            //forgot password?
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 45),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    child: Text("Forgot Password?"),
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.red,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ForgotPass()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
             //sign in button
             SizedBox(
               height: 20,
@@ -104,24 +130,6 @@ class _LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(builder: (context) => BlankPage()),
                 );
               },
-            ),
-            //forgot password?
-            SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 45),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: Colors.redAccent,
-                    ),
-                  )
-                ],
-              ),
             ),
             //not a member? register now
             SizedBox(
