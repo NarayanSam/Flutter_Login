@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'blank.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/loginPage.dart';
 
@@ -121,25 +121,18 @@ class _NewUserState extends State<NewUser> {
             SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: Center(
-                  child: Text(
-                    'Create New Account',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
+            ElevatedButton(
+              child: Text("Create New Account"),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blue,
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BlankPage()),
+                );
+              },
             ),
             //already a user
             SizedBox(
