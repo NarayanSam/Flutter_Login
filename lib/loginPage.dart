@@ -137,17 +137,17 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Not a member?'),
-                InkWell(
-                  child: Text(
-                    'Register Now!',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                    ),
-                    //onTap: () {
-                    //_navigateToNextScreen(context);
-                    //},
+                TextButton(
+                  child: Text("Register Now!"),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.blue,
                   ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewUser()),
+                    );
+                  },
                 ),
               ],
             ),
@@ -159,10 +159,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  void _navigateToNextScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => NewUser()));
   }
 }

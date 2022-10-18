@@ -18,10 +18,8 @@ class _NewUserState extends State<NewUser> {
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text(
-              'Create your Account',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              'Create New Account',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             //Name
             SizedBox(
@@ -48,7 +46,7 @@ class _NewUserState extends State<NewUser> {
             ),
             //E-mail
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -88,7 +86,7 @@ class _NewUserState extends State<NewUser> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Create  New Password',
+                      hintText: 'Enter New Password',
                     ),
                   ),
                 ),
@@ -132,7 +130,7 @@ class _NewUserState extends State<NewUser> {
                 ),
                 child: Center(
                   child: Text(
-                    'Create Your Account',
+                    'Create New Account',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
