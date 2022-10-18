@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/loginPage.dart';
 
 class NewUser extends StatefulWidget {
   const NewUser({Key? key}) : super(key: key);
@@ -149,12 +150,18 @@ class _NewUserState extends State<NewUser> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Already a User!',
-                    style: TextStyle(
-                      color: Colors.redAccent,
+                  TextButton(
+                    child: Text("Already a user!"),
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.red,
                     ),
-                  )
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
