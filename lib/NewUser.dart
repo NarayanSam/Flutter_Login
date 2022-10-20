@@ -122,7 +122,7 @@ class _NewUserState extends State<NewUser> {
               height: 20,
             ),
             ElevatedButton(
-              child: Text("Create New Account"),
+              child: Text("     Create New Account     "),
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blue,

@@ -103,7 +103,7 @@ class _ForgotPass extends State<ForgotPass> {
                 height: 20,
               ),
               ElevatedButton(
-                child: Text("Create New Password"),
+                child: Text("    Create New Password     "),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
                   backgroundColor: Colors.blue,

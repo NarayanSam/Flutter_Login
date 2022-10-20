@@ -10,6 +10,10 @@ class BlankPage extends StatefulWidget {
 class _BlankPageState extends State<BlankPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My App'),
+      ),
+    );
   }
 }
