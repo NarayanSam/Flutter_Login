@@ -239,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             //Google
             SizedBox(
-              height: 5,
+              height: 1,
             ),
             ElevatedButton(
               onPressed: () async {

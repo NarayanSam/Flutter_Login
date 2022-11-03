@@ -12,6 +12,12 @@ class BlankPage extends StatefulWidget {
 
 class _BlankPageState extends State<BlankPage> {
   final User = FirebaseAuth.instance.currentUser;
+  signOut() async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: ((context) => LoginPage())));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +29,7 @@ class _BlankPageState extends State<BlankPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Signed in as: ' + User!.email!),
+            ElevatedButton(onPressed: signOut, child: Text('Sign Out'))
           ],
         ),
       ),
