@@ -22,24 +22,24 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _isLoading = false;
   final _auth = FirebaseAuth.instance;
-  // signinWithGoogle() async {
-  //   setState(() {
-  //     _isLoading = true;
-  //   });
-//
-  //   try {
-  //     GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //     GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-  //     final credential = GoogleAuthProvider.credential(
-  //         accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
-  //     UserCredential userCredential =
-  //         await _auth.signInWithCredential(credential);
-  //   } catch (e) {}
-  //   setState(() {
-  //     _isLoading = true;
-  //   });
-  // }
-//
+  signinWithGoogle() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+      final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+      UserCredential userCredential =
+          await _auth.signInWithCredential(credential);
+    } catch (e) {}
+    setState(() {
+      _isLoading = true;
+    });
+  }
+
   loginUsers() async {
     setState(() {
       _isLoading = true;
@@ -238,29 +238,29 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             //Google
-            // SizedBox(
-            // height: 5,
-            //),
-            //  ElevatedButton(
-            //    onPressed: () async {
-            //      signinWithGoogle().then((_) {
-            //        Navigator.pushReplacement(
-            //            context,
-            //            MaterialPageRoute<void>(
-            //              builder: (BuildContext context) => const BlankPage(),
-            //            ));
-            //      });
-            //    },
-            //    child: _isLoading
-            //        ? Center(
-            //            child: CircularProgressIndicator(color: Colors.white),
-            //          )
-            //        : Text("Sign in with Google"),
-            //    style: ElevatedButton.styleFrom(
-            //      foregroundColor: Colors.white,
-            //      backgroundColor: Colors.blue,
-            //    ),
-            //  ),
+            SizedBox(
+              height: 5,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                signinWithGoogle().then((_) {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const BlankPage(),
+                      ));
+                });
+              },
+              child: _isLoading
+                  ? Center(
+                      child: CircularProgressIndicator(color: Colors.white),
+                    )
+                  : Text("Sign in with Google"),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blue,
+              ),
+            ),
           ]),
         ),
       ),
